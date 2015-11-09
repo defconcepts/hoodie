@@ -57,6 +57,50 @@ If you want to read or contribute to the source-code you can get to it in the in
 - [**client**](https://github.com/hoodiehq/hoodie-client)
 - [**admin-dashboard**](https://github.com/hoodiehq/hoodie-admin-dashboard)
 
+```
+hoodie
+│
+├─── hoodie-admin-dashboard
+│    A web application to manage settings, users and their data.
+│    Accessible at /hoodie/admin
+│
+├─┬─ hoodie-server
+│ │  Hoodie’s backend logic
+│ │
+│ ├─── hapi-couchdb-account-api
+│ │    Hapi plugin exposing a REST API for account-related functionality, and
+│ │    configurable logic for password resets, validation, and more.
+│ │
+│ ├─── hapi-couchdb-store-api
+│ │    Hapi plugin exposing a subset of CouchDBs REST API to store & sync
+│ │    JSON data
+│ │
+│ └─── hapi-couchdb-task-api
+│      Hapi plugin exposing an even smaller subset of CouchDBs REST API and
+│      backend logic for async background tasks
+│
+└─┬─ hoodie-client
+  │  Hoodie’s front-end api
+  │
+  ├─── hoodie-client-log
+  │    hoodie.log API for the browser
+  │
+  ├─── hoodie-client-connection-status
+  │    hoodie.connection API for the browser
+  │
+  ├─── account-client
+  │    An all things account client API for the browser
+  │
+  ├─── pouchdb-hoodie-store
+  │    Hoodie-like Store & Sync API on top of PouchDB
+  │
+  ├─── hoodie-client-task-queue
+  │    client api for asynchronous task queue, using PouchDB for sync
+  │
+  └─── humble-localstorage
+       wraps localStorage and adds .getObject(), .setObject(), .isPersistent
+```
+
 ### Core Plugins
 
 - [**plugin-appconfig**](https://github.com/hoodiehq/hoodie-plugin-appconfig)
